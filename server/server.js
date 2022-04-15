@@ -28,4 +28,3 @@ app.all('*', async (request, response) => {
 app.listen(port, () => {
     console.log(`Server started on http://localhost:${port}`);
 });
-
