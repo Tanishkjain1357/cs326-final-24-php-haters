@@ -28,3 +28,43 @@ app.all('*', async (request, response) => {
 app.listen(port, () => {
     console.log(`Server started on http://localhost:${port}`);
 });
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use('/client', express.static('client'));
+
+app.post('/signup', async (request, response) => {
+    const options = request.body;
+    signupCounter(response, options.name);
+});
+
+app.post('/createEvent', async (request, response) => {
+    const options = request.body;
+    createEvCounter(response, options.name);
+});
+
+app.delete('/deleteEvent', async (request, response) => {
+    const options = request.query; 
+    deleteEvCounter(response, options.name);
+});
+
+app.get('/majorReq', async (request, response) => {
+    const options = request.query;
+    majorCounter(response, options.name);
+});
+
+app.get('/clubRSO', async (request, response) => {
+    const options = request.query;
+    clubRSOCounter(response, options.name);
+});
+
+app.get('/resProf', async (request, response) => {
+    const options = request.query;
+    resProfCounter(response, options.name);
+});
+
+app.get('/carDev', async (request, response) => {
+    const options = request.query;
+    carDevCounter(response, options.name);
+});
