@@ -36,22 +36,21 @@ app.use('/client', express.static('client'));
 
 app.post('/signup', async (request, response) => {
     const options = request.body;
-    signupCounter(response, options.name);
+    signupCounter(response, options.username, options.password);
 });
 
 app.post('/createEvent', async (request, response) => {
     const options = request.body;
-    createEvCounter(response, options.name);
+    createEvCounter(response, options.evName, options.date, options.time);
 });
 
 app.delete('/deleteEvent', async (request, response) => {
     const options = request.query; 
-    deleteEvCounter(response, options.name);
 });
 
 app.get('/majorReq', async (request, response) => {
     const options = request.query;
-    majorCounter(response, options.name);
+    majorCounter(response, options.major, options.year, options.credits);
 });
 
 app.get('/clubRSO', async (request, response) => {
@@ -61,10 +60,10 @@ app.get('/clubRSO', async (request, response) => {
 
 app.get('/resProf', async (request, response) => {
     const options = request.query;
-    resProfCounter(response, options.name);
+    resProfCounter(response, options.research, options.prof);
 });
 
 app.get('/carDev', async (request, response) => {
     const options = request.query;
-    carDevCounter(response, options.name);
+    carDevCounter(response, options.cField);
 });
