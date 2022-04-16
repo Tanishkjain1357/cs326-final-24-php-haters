@@ -2,7 +2,7 @@
   "name": "cs326-final-24-php-haters",
   "version": "1.0.0",
   "description": "",
-  "main": "client/main.html",
+  "main": "homepage.html",
   "type": "module",
   "scripts": {
     "start": "node server/server.js"
