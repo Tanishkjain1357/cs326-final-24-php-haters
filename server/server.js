@@ -59,6 +59,36 @@ function clubAdder(path) {
     };
 }
 
+function resAdder(path) {
+    return async (research, prof) => {
+        console.log(research, prof);
+        const data = { research, prof };
+        const scores = await readResFile(path);
+        scores.push(data);
+        writeFile(path, JSON.stringify(scores), 'utf8');
+    };
+}
+
+function carAdder(path) {
+    return async (cField) => {
+        console.log(cField);
+        const data = { cField };
+        const scores = await readCarFile(path);
+        scores.push(data);
+        writeFile(path, JSON.stringify(scores), 'utf8');
+    };
+}
+
+function signAdder(path) {
+    return async (username, password) => {
+        console.log(username, password);
+        const data = { username, password };
+        const scores = await readSignFile(path);
+        scores.push(data);
+        writeFile(path, JSON.stringify(scores), 'utf8');
+    };
+}
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
