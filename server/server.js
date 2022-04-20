@@ -89,6 +89,16 @@ function signAdder(path) {
     };
 }
 
+const createEvCounter = eventAdder(calendarFile);
+const majorCounter = majorAdder(majorReqFile);
+const clubRSOCounter = clubAdder(clubrsoFile);
+const resProfCounter = resAdder(researchFile);
+const carDevCounter = carAdder(carDevFile);
+const signupCounter = signAdder(signUpFile);
+
+const app = express();
+const port = 3000;
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
