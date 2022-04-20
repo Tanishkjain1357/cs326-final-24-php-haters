@@ -42,8 +42,8 @@ function runner(url) {
         return work.resProf();
     } else if (url === "./careerDev/careerDev.html") {
         return work.careerDev();
-    } else {
-        return signLogIn();
+    } else if (url === "./signUp/signup.html") {
+        return work.signLogIn();
     }
 }
 

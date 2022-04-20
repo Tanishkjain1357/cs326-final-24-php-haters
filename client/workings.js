@@ -1,8 +1,3 @@
-// const calendarFile = 'calendar.json';
-// const majorReqFile = 'mReq.json';
-// const clubrsoFile = 'crso.json';
-
-
 function wCalendar() {
     const evName = document.getElementById('evName');
     const date = document.getElementById('date');
@@ -30,10 +25,10 @@ function wMajorReq() {
     major.addEventListener('keyup', (e) => {
         console.log(major.value);
     });
-    year.addEventListener('keyup', (e) => {
+    year.addEventListener('change', (e) => {
         console.log(year.value);
     });
-    credits.addEventListener('keyup', (e) => {
+    credits.addEventListener('change', (e) => {
         console.log(credits.value);
     });
     const search = document.getElementById('search');
@@ -53,7 +48,7 @@ function cRso() {
 }
 
 function resProf() {
-    const res = document.getElementById('research');
+    const res = document.getElementById('interest');
     const prof = document.getElementById('professor');
     const search = document.getElementById('search');
     search.addEventListener('click', () => {
@@ -69,14 +64,23 @@ function careerDev() {
     });
 }
 
+function signLogIn() {
+    const un = document.getElementById('username');
+    const pwd = document.getElementById('password');
+    const sbut = document.getElementById('signup');
+    sbut.addEventListener('click', () => {
+        addSignUp(un.value, pwd.value);
+    });
+}
 
 async function eventAdd(name, date, time) {
+    console.log(name)
     const response = await fetch(`/createEvent`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name: name, date: date, time: time }),
+        body: JSON.stringify({ evName: name, date: date, time: time }),
     });
     const data = await response.json();
     console.log(data);
@@ -85,7 +89,7 @@ async function eventAdd(name, date, time) {
 
 async function majorCheck(major, year, credits) {
     const response = await fetch(`/majorReq`, {
-        method: 'GET',
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
@@ -96,26 +100,26 @@ async function majorCheck(major, year, credits) {
     return data;
 }
 
-async function crsoSearch(club) {
+async function crsoSearch(name) {
     const response = await fetch(`/clubRSO`, {
-        method: 'GET',
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ club: club }),
+        body: JSON.stringify({ name: name }),
     });
     const data = await response.json();
     console.log(data);
     return data;
 }
 
-async function researchSearch(interest, professor) {
-    const response = await fetch(`/clubRSO`, {
-        method: 'GET',
+async function researchSearch(research, professor) {
+    const response = await fetch(`/resProf`, {
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ interest: interest, professor: professor }),
+        body: JSON.stringify({ research: research, prof: professor }),
     });
     const data = await response.json();
     console.log(data);
@@ -124,15 +128,52 @@ async function researchSearch(interest, professor) {
 
 async function cDevSearch(career) {
     const response = await fetch(`/carDev`, {
-        method: 'GET',
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ career: career }),
+        body: JSON.stringify({ cField: career }),
     });
     const data = await response.json();
     console.log(data);
     return data;
 }
 
-export { wCalendar, wMajorReq, cRso, resProf, careerDev }
+async function addSignUp(username, password) {
+    const response = await fetch(`/signUp`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username: username, password: password }),
+    });
+    const data = await response.json();
+    console.log(data);
+    return data;
+}
+
+async function testDisplay(path) {
+    const blah = document.createElement('table');
+    const bod = document.createElement('tbody');
+    const head = document.createElement('tr');
+    elems.forEach(x => {
+        const n = document.createElement('th');
+        n.textContent = x;
+        head.appendChild(n);
+    })
+    bod.appendChild(head);
+    highScores.forEach(x => {
+        const row = document.createElement('tr');
+        Object.entries(x).forEach((y) => {
+            const n = document.createElement('td');
+            n.textContent = y[1];
+            row.appendChild(n);
+        });
+        bod.appendChild(row);
+    });
+    blah.appendChild(bod);
+    return blah;
+}
+
+
+export { wCalendar, wMajorReq, cRso, resProf, careerDev, signLogIn }
