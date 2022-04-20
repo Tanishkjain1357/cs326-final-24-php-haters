@@ -22,6 +22,23 @@ function readFiles(path) {
     };
 }
 
+const readEventFile = readFiles(calendarFile);
+const readMajorFile = readFiles(majorReqFile);
+const readClubFile = readFiles(clubrsoFile);
+const readResFile = readFiles(researchFile);
+const readCarFile = readFiles(carDevFile);
+const readSignFile = readFiles(signUpFile);
+
+function eventAdder(path) {
+    return async (evName, date, time) => {
+        const data = { evName, date, time };
+        const scores = await readEventFile(path);
+        scores.push(data);
+        writeFile(path, JSON.stringify(scores), 'utf8');
+        return JSON.stringify(scores);
+    };
+}
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
