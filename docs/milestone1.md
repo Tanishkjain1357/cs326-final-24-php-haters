@@ -11,7 +11,7 @@
 - Shubh Vashisht
 - Tanishk Jain
 - Varisht Aggarwal
-- Shreya Khetri
+- Shreya Khettry
 
 # Innovative Idea
 
