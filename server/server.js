@@ -1,7 +1,6 @@
 import express from 'express';
 import { readFile, writeFile } from 'fs/promises';
 import logger from 'morgan';
-// const { faker } = require('@faker-js/faker');
 
 const calendarFile = 'calendar.json';
 const majorReqFile = 'mReq.json';
@@ -17,13 +16,10 @@ function readFiles(path) {
             const x = JSON.parse(data);
             return x;
         } catch (error) {
-            // Likely the file doesn't exist
             return [];
         }
     };
 }
-
-// Write functions for each of the endpoints
 
 const readEventFile = readFiles(calendarFile);
 const readMajorFile = readFiles(majorReqFile);
@@ -101,16 +97,13 @@ const signupCounter = signAdder(signUpFile);
 const app = express();
 const port = 3000;
 
-// Add Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// TODO: Add the morgan middleware to the app
 app.use(logger('dev'));
-// TODO: Add the express.static middleware to the app.
+
 app.use('/client', express.static('client'));
 
-// TODO: API ENDPOINTS
 app.post('/signUp', async (request, response) => {
     const options = request.body;
     signupCounter(options.username, options.password);
@@ -155,7 +148,6 @@ app.all('*', async (request, response) => {
     response.status(404).send(`Not found: ${request.path}`);
 });
 
-// Start the server.
 app.listen(port, () => {
     console.log(`Server started on http://localhost:${port}`);
 });
