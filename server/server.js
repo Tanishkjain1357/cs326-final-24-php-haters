@@ -9,6 +9,13 @@ const researchFile = 'research.json';
 const carDevFile = 'careerDev.json';
 const signUpFile = 'signUp.json';
 
+const readEventFile = readFiles(calendarFile);
+const readMajorFile = readFiles(majorReqFile);
+const readClubFile = readFiles(clubrsoFile);
+const readResFile = readFiles(researchFile);
+const readCarFile = readFiles(carDevFile);
+const readSignFile = readFiles(signUpFile);
+
 function readFiles(path) {
     return async () => {
         try {
@@ -20,13 +27,6 @@ function readFiles(path) {
         }
     };
 }
-
-const readEventFile = readFiles(calendarFile);
-const readMajorFile = readFiles(majorReqFile);
-const readClubFile = readFiles(clubrsoFile);
-const readResFile = readFiles(researchFile);
-const readCarFile = readFiles(carDevFile);
-const readSignFile = readFiles(signUpFile);
 
 function eventAdder(path) {
     return async (evName, date, time) => {

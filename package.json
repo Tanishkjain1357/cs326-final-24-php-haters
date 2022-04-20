@@ -1,0 +1,27 @@
+{
+  "name": "cs326-final-24-php-haters",
+  "version": "1.0.0",
+  "description": "",
+  "main": "workings.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tanishkjain1357/cs326-final-24-php-haters.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "morgan": "^1.10.0"
+  },
+  "bugs": {
+    "url": "https://github.com/Tanishkjain1357/cs326-final-24-php-haters/issues"
+  },
+  "homepage": "https://github.com/Tanishkjain1357/cs326-final-24-php-haters#readme",
+  "devDependencies": {
+    "@faker-js/faker": "^6.1.2"
+  }
+}
