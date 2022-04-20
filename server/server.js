@@ -39,6 +39,26 @@ function eventAdder(path) {
     };
 }
 
+function majorAdder(path) {
+    return async (major, year, credits) => {
+        console.log(major);
+        const data = { major, year, credits };
+        const scores = await readMajorFile(path);
+        scores.push(data);
+        writeFile(path, JSON.stringify(scores), 'utf8');
+    };
+}
+
+function clubAdder(path) {
+    return async (name) => {
+        console.log(name);
+        const data = { name };
+        const scores = await readClubFile(path);
+        scores.push(data);
+        writeFile(path, JSON.stringify(scores), 'utf8');
+    };
+}
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
