@@ -2,7 +2,7 @@
   "name": "cs326-final-24-php-haters",
   "version": "1.0.0",
   "description": "",
-  "main": "client/main.html",
+  "main": "workings.js",
   "type": "module",
   "scripts": {
     "start": "node server/server.js"
@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Tanishkjain1357/cs326-final-24-php-haters/issues"
   },
-  "homepage": "https://github.com/Tanishkjain1357/cs326-final-24-php-haters#readme"
+  "homepage": "https://github.com/Tanishkjain1357/cs326-final-24-php-haters#readme",
+  "devDependencies": {
+    "@faker-js/faker": "^6.1.2"
+  }
 }
