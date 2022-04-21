@@ -98,14 +98,26 @@ const signupCounter = signAdder(signUpFile);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
+const options = {
+  dotfiles: "ignore",
+  etag: true,
+  extensions: ["htm", "html"],
+  index: false,
+  maxAge: "7d",
+  redirect: false,
+  setHeaders: function (res, path, stat) {
+    res.set("x-timestamp", Date.now());
+  },
+};
 app.use(logger("dev"));
-app.use(express.static("../client"));
+app.use(express.static("public", options));
 
-app.get("/", function (req, res) {
-  res.sendFile(path.resolve("./client/homepage.html"));
+// app.get("/", function (req, res) {
+//   res.sendFile(path.resolve("./client/homepage.html"));
+// });
+app.get("/", async (req, res) => {
+  return res.sendFile(path.resolve("./public/homepage.html"));
 });
-
 app.post("/signUp", async (request, response) => {
   const options = request.body;
   signupCounter(options.username, options.password);
