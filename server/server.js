@@ -1,7 +1,7 @@
 import express from "express";
 import { readFile, writeFile } from "fs/promises";
 import logger from "morgan";
-const path = require("path");
+import path from "path";
 const app = express();
 const calendarFile = "calendar.json";
 const majorReqFile = "mReq.json";
@@ -100,7 +100,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(logger("dev"));
-app.use("/static", express.static(path.join(__dirname, "client")));
+app.use(express.static("../client"));
+
+app.get("/", function (req, res) {
+  res.sendFile(path.resolve("./client/homepage.html"));
+});
 
 app.post("/signUp", async (request, response) => {
   const options = request.body;
