@@ -17,7 +17,7 @@
 
 The following Flowchart displays all the various information that the client obtains from the back-end server. The endpoint name and a brief description of each endpoint is provided as well along with their different functionalities.
 
-![example image](imag/flowchart.png)
+![example image](../imag/flowchart.png)
 
 # PART 1: Back-end Skeleton Code
 
