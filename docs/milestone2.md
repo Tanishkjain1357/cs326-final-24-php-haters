@@ -33,3 +33,4 @@ URL of the Heroku Application:
 
 - Tanishk: Front-End Implementation of the Code (Part 2)
 - Shreya: Back-End Implementation of the Code (Part 1), Flowchart (Part 0), creation and implementation of the 'milestone2.md' document
+- Shubh: Heroku Deployment (Part 3)
