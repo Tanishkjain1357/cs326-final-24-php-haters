@@ -32,5 +32,5 @@ URL of the Heroku Application: https://phphatersserver.herokuapp.com/
 # Breakdown of Work
 
 - Tanishk: Front-End Implementation of the Code (Part 2)
-- Shreya: Back-End Implementation of the Code (Part 1), Flowchart (Part 0), creation and implementation of the 'milestone2.md' document
+- Shreya: Back-End Implementation of the Code (Part 1), Flowchart (Part 0), the 'milestone2.md' and 'setup.md' documents
 - Shubh: Heroku Deployment (Part 3)
