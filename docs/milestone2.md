@@ -27,7 +27,7 @@ Nothing was supposed to be added.
 
 # PART 3: Deployment
 
-URL of the Heroku Application: 
+URL of the Heroku Application: https://phphatersserver.herokuapp.com/
 
 # Breakdown of Work
 
