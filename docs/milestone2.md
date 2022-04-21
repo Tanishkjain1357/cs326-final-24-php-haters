@@ -19,11 +19,11 @@ The following Flowchart displays all the various information that the client obt
 
 ![example image](../imag/flowchart.png)
 
-# PART 1: Back-end Skeleton Code Implementation
+# PART 1: Back-End Skeleton Code Implementation
 
 Nothing was supposed to be added.
 
-# PART 2: Front-end Implementation
+# PART 2: Front-End Implementation
 
 # PART 3: Heroku Deployment
 
