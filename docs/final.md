@@ -25,10 +25,12 @@
 
 #### Major Requirements and Course Descriptions API Routes
 
-1. POST @ /majorReq: Used to create a course
-2. GET @ /majorReq: Used to get all the courses in the database
-3. PUT @ /majorReg : Used to update a course in the database
-4. DELETE @ /majorReg : Used to delete a course in the database
+| API Endpoint Type  | Description |
+|--------------------|-------------|
+| POST @ /majorReq   | Used to create a course|
+| GET @ /majorReq    | Used to get all the courses in the database|
+| PUT @ /majorReg    | Used to update a course in the database |
+| DELETE @ /majorReg | Used to delete a course in the database |
 
 #### Clubs and RSOs Information API Routes
 
