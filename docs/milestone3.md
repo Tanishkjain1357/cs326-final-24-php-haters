@@ -15,7 +15,7 @@
 
 # RELATIONAL DATABASES
 
-### Major Requirements Table (Course Descriptions)
+#### Major Requirements Table (Course Descriptions)
 
 | Column       | Data Type | Description              |
 |--------------|-----------|--------------------------|
@@ -25,10 +25,18 @@
 | credits      | Number    | The number of credits the course counts for |
 
 
-Research Areas Information Table 
+#### Research Areas Information Table 
 
 | Column       | Data Type | Description              |
 |--------------|-----------|--------------------------|
 | name         | String    | The name of the research area |
 | faculty      | String    | The names of all the faculty part of the research area |
 | description  | String    | The description of the research area |
+
+
+#### Clubs/RSOs Information Table
+
+| Column       | Data Type | Description              |
+|--------------|-----------|--------------------------|
+| name         | String    | The name of the Club/RSO |
+| description  | String    | The description of the Club/RSO |
