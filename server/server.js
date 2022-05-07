@@ -16,7 +16,7 @@ const signUpFile = "signUp.json";
 
 mongoose.connect(
   process.env.DATABASE_URL ||
-    "mongodb+srv://shubhv2:Godofwar123@cluster0.o1pid.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+  "mongodb+srv://shubhv2:Godofwar123@cluster0.o1pid.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 );
 const db = mongoose.connection;
 
@@ -149,6 +149,7 @@ app.delete("/deleteEvent", async (req, res) => {
 ///////////////////////////////////////////////////////////////////////////////////////
 app.get("/majorReq", async (req, res) => {
   // Done by mongoose!
+  console.log("GET");
   const allMajors = await course.find();
   res.status(200).send(allMajors);
 });
