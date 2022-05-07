@@ -40,3 +40,11 @@
 |--------------|-----------|--------------------------|
 | name         | String    | The name of the Club/RSO |
 | description  | String    | The description of the Club/RSO |
+
+#### Internship Oppertunity Table
+
+| Column       | Data Type | Description              |
+|--------------|-----------|--------------------------|
+| Employee     | String    | The type of the Internship |
+| Industry     | String    | The industry of the Internship |
+| Location     | String    | The location of the Internship |
