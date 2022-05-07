@@ -51,6 +51,6 @@
 
 # Breakdown of Work
 
-- Tanishk: Handled the Front-End
+- Tanishk: Handled the Front-End and helped in Back-End Functionality
 - Shubh: Created and Populated the Databases and Deployed on Heroku
 - Shreya: Created the documents, helped in the creation of the Database Schema and Back-End Functionality
