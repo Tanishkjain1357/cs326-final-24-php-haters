@@ -1,7 +1,11 @@
+import dotenv from "dotenv";
+dotenv.config();
 import express from "express";
 import { readFile, writeFile } from "fs/promises";
+import { course, club, internship, research } from "./models.js";
 import logger from "morgan";
 import path from "path";
+import mongoose from "mongoose";
 const app = express();
 const calendarFile = "calendar.json";
 const majorReqFile = "mReq.json";
@@ -9,6 +13,15 @@ const clubrsoFile = "crso.json";
 const researchFile = "research.json";
 const carDevFile = "careerDev.json";
 const signUpFile = "signUp.json";
+
+mongoose.connect(
+  process.env.DATABASE_URL ||
+    "mongodb+srv://shubhv2:Godofwar123@cluster0.o1pid.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+);
+const db = mongoose.connection;
+
+db.on("error", (error) => console.log(error));
+db.once("open", () => console.log("Database connected"));
 
 function readFiles(path) {
   return async () => {
@@ -111,56 +124,234 @@ const options = {
 };
 app.use(logger("dev"));
 app.use(express.static("public", options));
-
+app.use("/asset", express.static("asset"));
 // app.get("/", function (req, res) {
 //   res.sendFile(path.resolve("./client/homepage.html"));
 // });
 app.get("/", async (req, res) => {
   return res.sendFile(path.resolve("./public/homepage.html"));
 });
-app.post("/signUp", async (request, response) => {
-  const options = request.body;
+app.post("/signUp", async (req, res) => {
+  const options = req.body;
   signupCounter(options.username, options.password);
-  response.status(200).json({ status: "success" });
+  res.status(200).json({ status: "success" });
 });
 
-app.post("/createEvent", async (request, response) => {
-  const options = request.body;
+app.post("/createEvent", async (req, res) => {
+  const options = req.body;
   const x = createEvCounter(options.evName, options.date, options.time);
-  response.status(200).json({ status: "success" });
+  res.status(200).json({ status: "success" });
 });
 
-app.delete("/deleteEvent", async (request, response) => {
-  const options = request.body;
+app.delete("/deleteEvent", async (req, res) => {
+  const options = req.body;
+});
+///////////////////////////////////////////////////////////////////////////////////////
+app.get("/majorReq", async (req, res) => {
+  // Done by mongoose!
+  const allMajors = await course.find();
+  res.status(200).send(allMajors);
 });
 
-app.post("/majorReq", async (request, response) => {
-  const options = request.body;
-  majorCounter(options.major, options.year, options.credits);
-  response.status(200).json({ status: "success" });
+app.post("/majorReq", async (req, res) => {
+  //Done using mongoose!
+  let { name, instructor, description, credits } = req.body;
+  try {
+    let temp = new course({ name, instructor, description, credits });
+    await temp.save();
+    res.status(200).send(temp);
+  } catch (err) {
+    return console.log(err.message);
+  }
+  // response.status(200).json({ status: "success" });
 });
 
-app.post("/clubRSO", async (request, response) => {
-  const options = request.body;
-  clubRSOCounter(options.name);
-  response.status(200).json({ status: "success" });
+app.put("/majorReq", async (req, res) => {
+  //Done using mongoose!
+  let { name, instructor, description, credits } = req.body;
+  try {
+    const doc = await course.findOneAndUpdate(
+      { name: name },
+      { instructor: instructor, description: description },
+      { new: true }
+    );
+    res.status(200).send(doc);
+  } catch (err) {
+    return console.log(err.message);
+  }
+  // res.status(200).json({ status: "success" });
 });
 
-app.post("/resProf", async (request, response) => {
-  const options = request.body;
-  resProfCounter(options.research, options.prof);
-  response.status(200).json({ status: "success" });
+app.delete("/majorReq", async (req, res) => {
+  //Done using mongoose!
+  let { name, instructor, description, credits } = req.body;
+  try {
+    const temp = await course.findOne({ name: name });
+    if (!temp) res.status(404).send("Resource to be deleted NOT FOUND!!");
+    await course.deleteOne({ name: name });
+    res.status(200).send("Document deleted Successfully!");
+    // res.status(200).send(temp);
+  } catch (err) {
+    return console.log(err.message);
+  }
+  // res.status(200).json({ status: "success" });
 });
 
-app.post("/carDev", async (request, response) => {
-  const options = request.body;
-  carDevCounter(options.cField);
-  response.status(200).json({ status: "success" });
+////////////////////////////////////////////////////////////////////////////////////
+//Routes for clubs
+app.get("/clubRSO", async (req, res) => {
+  const allClubs = await course.find();
+  res.status(200).send(allClubs);
 });
 
-app.all("*", async (request, response) => {
-  response.status(404).send(`Not found: ${request.path}`);
+app.post("/clubRSO", async (req, res) => {
+  //Done using mongoose!
+  let { name, description } = req.body;
+  try {
+    let temp = new club({ name, description });
+    await temp.save();
+    res.status(200).send(temp);
+  } catch (err) {
+    return console.log(err.message);
+  }
 });
+
+app.put("/clubRSO", async (req, res) => {
+  //Done using mongoose!
+  let { name, description } = req.body;
+  try {
+    const temp = await club.findOneAndUpdate(
+      { name: name },
+      { description: description },
+      { new: true }
+    );
+    res.status(200).send(temp);
+  } catch (err) {
+    return console.log(err.message);
+  }
+  // res.status(200).json({ status: "success" });
+});
+
+app.delete("/clubRSO", async (req, res) => {
+  //Done using mongoose!
+  let { name } = req.body;
+  try {
+    const temp = await club.findOne({ name: name });
+    if (!temp) res.status(404).send("Resource to be deleted NOT FOUND!!");
+    await club.deleteOne({ name: name });
+    res.status(200).send("Document deleted Successfully!");
+    // res.status(200).send(temp);
+  } catch (err) {
+    return console.log(err.message);
+  }
+  // res.status(200).json({ status: "success" });
+});
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+app.get("/resProf", async (req, res) => {
+  const allClubs = await research.find();
+  res.status(200).send(allClubs);
+});
+
+app.post("/resProf", async (req, res) => {
+  //Done using mongoose!
+  let { name, faculty, description } = req.body;
+  try {
+    let temp = new research({ name, faculty, description });
+    await temp.save();
+    res.status(200).send(temp);
+  } catch (err) {
+    return console.log(err.message);
+  }
+});
+
+app.put("/resProf", async (req, res) => {
+  //Done using mongoose!
+  let { name, faculty, description } = req.body;
+  try {
+    const temp = await research.findOneAndUpdate(
+      { name: name },
+      { description: description, faculty: faculty },
+      { new: true }
+    );
+    res.status(200).send(temp);
+  } catch (err) {
+    return console.log(err.message);
+  }
+  // res.status(200).json({ status: "success" });
+});
+
+app.delete("/resProf", async (req, res) => {
+  //Done using mongoose!
+  let { name } = req.body;
+  try {
+    const temp = await research.findOne({ name: name });
+    if (!temp) res.status(404).send("Resource to be deleted NOT FOUND!!");
+    await research.deleteOne({ name: name });
+    res.status(200).send("Document deleted Successfully!");
+    // res.status(200).send(temp);
+  } catch (err) {
+    return console.log(err.message);
+  }
+  // res.status(200).json({ status: "success" });
+});
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+app.get("/carDev", async (req, res) => {
+  const allClubs = await internship.find();
+  res.status(200).send(allClubs);
+});
+
+app.post("/carDev", async (req, res) => {
+  //Done using mongoose!
+  let { Employee, Industry, Location } = req.body;
+  try {
+    let temp = new internship({ Employee, Industry, Location });
+    await temp.save();
+    res.status(200).send(temp);
+  } catch (err) {
+    return console.log(err.message);
+  }
+});
+
+app.put("/carDev", async (req, res) => {
+  //Done using mongoose!
+  let { Employee, Industry, Location } = req.body;
+  try {
+    const temp = await internship.findOneAndUpdate(
+      { Employee: Employee },
+      { Industry: Industry, Location: Location },
+      { new: true }
+    );
+    res.status(200).send(temp);
+  } catch (err) {
+    return console.log(err.message);
+  }
+  // res.status(200).json({ status: "success" });
+});
+
+app.delete("/carDev", async (req, res) => {
+  //Done using mongoose!
+  let { Employee } = req.body;
+  try {
+    const temp = await internship.findOne({ Employee: Employee });
+    if (!temp) res.status(404).send("Resource to be deleted NOT FOUND!!");
+    await internship.deleteOne({ Employee: Employee });
+    res.status(200).send("Document deleted Successfully!");
+    // res.status(200).send(temp);
+  } catch (err) {
+    return console.log(err.message);
+  }
+  // res.status(200).json({ status: "success" });
+});
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+// app.all("*", async (req, res) => {
+//   res.status(404).send(`Not found: ${req.path}`);
+// });
 
 app.listen(process.env.PORT || 3000, () => {
   console.log(`Server started on http://localhost:${3000}`);
