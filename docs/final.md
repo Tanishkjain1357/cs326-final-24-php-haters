@@ -23,6 +23,10 @@
 
 # APIs
 
+# DATABASE
+
+# URL ROUTES/MAPPING
+
 #### Major Requirements and Course Descriptions API Routes
 
 | API Endpoint Type  | Description |
@@ -64,10 +68,6 @@
 | GET @ /carDev    | Used to get all the internship opportunities in the database|
 | PUT @ /carDev    | Used to update an internship opportunity in the database|
 | DELETE @ /carDev | Used to delete an internship opportunity in the database|
-
-# DATABASE
-
-# URL ROUTES/MAPPING
 
 # AUTHENTICATION/AUTHORIZATION
 
