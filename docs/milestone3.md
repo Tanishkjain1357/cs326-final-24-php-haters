@@ -48,3 +48,9 @@
 | Employee     | String    | The type of the Internship |
 | Industry     | String    | The industry of the Internship |
 | Location     | String    | The location of the Internship |
+
+# Breakdown of Work
+
+- Tanishk: Handled the Front-End
+- Shubh: Created and Populated the Databases and Deployed on Heroku
+- Shreya: Created the documents, helped in the creation of the Database Schema and Back-End Functionality
