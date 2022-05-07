@@ -152,7 +152,7 @@ async function addSignUp(username, password) {
     return data;
 }
 
-async function testDisplay(path) {
+async function testDisplay(elems, vals) {
     const blah = document.createElement('table');
     const bod = document.createElement('tbody');
     const head = document.createElement('tr');
@@ -162,7 +162,7 @@ async function testDisplay(path) {
         head.appendChild(n);
     })
     bod.appendChild(head);
-    highScores.forEach(x => {
+    vals.forEach(x => {
         const row = document.createElement('tr');
         Object.entries(x).forEach((y) => {
             const n = document.createElement('td');
@@ -176,4 +176,4 @@ async function testDisplay(path) {
 }
 
 
-export { wCalendar, wMajorReq, cRso, resProf, careerDev, signLogIn }
+export { wCalendar, wMajorReq, cRso, resProf, careerDev, signLogIn, testDisplay }
