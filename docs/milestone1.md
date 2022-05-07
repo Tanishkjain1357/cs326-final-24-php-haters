@@ -11,7 +11,7 @@
 - Shubh Vashisht
 - Tanishk Jain
 - Varisht Aggarwal
-- Shreya Khetri
+- Shreya Khettry
 
 # Innovative Idea
 
@@ -36,30 +36,30 @@ Provide resources that can help them get hands-on experience in research and/or 
 Provide a description and images of the user interface your
 application will intend on supporting.
 
-![example image](imag/1.jpeg)
+![example image](../imag/1.jpeg)
 
 The above image is a screenshot of a sketch of our application's calendar user interface. This page allows you to check your schedule and plan out courses accordingly.
 
-![example image](imag/2.jpeg)
+![example image](../imag/2.jpeg)
 
 The above image is a screenshot of a sketch of the landing page of our application. We will have a navbar and herosection in addition to a footer. The navbar will have all the links to different pages and will therefore be used to navigate in between different pages.
 
-![example image](imag/3.jpeg)
+![example image](../imag/3.jpeg)
 
 The above image is a screenshot of a sketch of the clubs page of our application. This page will provide us with the information of different clubs at the university and how we can join them.
 
-![example image](imag/4.jpeg)
+![example image](../imag/4.jpeg)
 
 The above image is a screenshot of a sketch of the research page of our application. This page will provide us with the information of different types of research going on in the campus and the professors that are responsible for it. The information will involve the professors' image, office and contact information.
 
-![example image](imag/5.jpeg)
+![example image](../imag/5.jpeg)
 
 The above image is a screenshot of a sketch of the career development page of our application. This page will provide us with different web pages related to different colleges at UMASS.
 
-![example image](imag/6.jpeg)
+![example image](../imag/6.jpeg)
 
 The above image is a screenshot of a sketch of the major requirements page of our application. This page will provide us with the information needed for major requirements.
 
-![example image](imag/7.jpeg)
+![example image](../imag/7.jpeg)
 
 Figma Design for the calendars page.
