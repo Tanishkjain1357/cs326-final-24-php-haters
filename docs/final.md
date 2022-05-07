@@ -32,6 +32,8 @@
 | PUT @ /majorReg    | Used to update a course in the database |
 | DELETE @ /majorReg | Used to delete a course in the database |
 
+
+
 #### Clubs and RSOs Information API Routes
 
 | API Endpoint Type  | Description |
@@ -41,6 +43,8 @@
 | PUT @ /clubRSO    | Used to update a club/RSO in the database|
 | DELETE @ /clubRSO | Used to delete a club/RSO in the database |
 
+
+
 #### Reserach Areas and Faculty API Routes
 
 | API Endpoint Type  | Description |
@@ -49,6 +53,8 @@
 | GET @ /resProf    | Used to get all the research areas in the database|
 | PUT @ /resProf    | Used to update a research area in the database|
 | DELETE @ /resProf | Used to delete a research area in the database|
+
+
 
 #### Career Development/ Internship Oppertunity API Routes
 
