@@ -109,4 +109,22 @@
 
 # DIVISION OF LABOR
 
+###### Milestone 1
+
+- Shreya: Part 1: Wireframes and Sketches
+- Tanishk: Part 2: HTML and CSS
+- Shubh: Part 2: HTML and CSS
+
+###### Milestone 2
+
+- Tanishk: Front-End Implementation of the Code (Part 2)
+- Shreya: Back-End Implementation of the Code (Part 1), Flowchart (Part 0), the 'milestone2.md' and 'setup.md' documents
+- Shubh: Heroku Deployment (Part 3)
+
+###### Milestone 3
+
+- Tanishk: Handled the Front-End and helped in Back-End Functionality
+- Shubh: Created and Populated the Databases and Deployed on Heroku
+- Shreya: Created the milestone 3 document, helped in the creation of the Database Schema and Back-End Functionality. Created the Final Document as well.
+
 # CONCLUSION

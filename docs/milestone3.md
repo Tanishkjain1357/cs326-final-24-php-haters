@@ -53,4 +53,4 @@
 
 - Tanishk: Handled the Front-End and helped in Back-End Functionality
 - Shubh: Created and Populated the Databases and Deployed on Heroku
-- Shreya: Created the documents, helped in the creation of the Database Schema and Back-End Functionality
+- Shreya: Created the milestone 3 document, helped in the creation of the Database Schema and Back-End Functionality. Created the Final Document as well.
