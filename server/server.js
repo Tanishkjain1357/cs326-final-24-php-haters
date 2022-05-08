@@ -123,13 +123,18 @@ const options = {
   },
 };
 app.use(logger("dev"));
-app.use(express.static("public", options));
-app.use("/asset", express.static("asset"));
+// app.use(express.static("public", options));
+// app.use("/asset", express.static("asset"));
+
+app.use("/public", express.static("public"));
 // app.get("/", function (req, res) {
 //   res.sendFile(path.resolve("./client/homepage.html"));
 // });
-app.get("/", async (req, res) => {
-  return res.sendFile(path.resolve("./public/homepage.html"));
+// app.get("/", async (req, res) => {
+//   return res.sendFile(path.resolve("./public/homepage.html"));
+// });
+app.get("/", (req, res) => {
+  res.redirect("/public/homepage.html");
 });
 app.post("/signUp", async (req, res) => {
   const options = req.body;
@@ -200,7 +205,7 @@ app.delete("/majorReq", async (req, res) => {
 ////////////////////////////////////////////////////////////////////////////////////
 //Routes for clubs
 app.get("/clubRSO", async (req, res) => {
-  const allClubs = await course.find();
+  const allClubs = await club.find();
   res.status(200).send(allClubs);
 });
 
