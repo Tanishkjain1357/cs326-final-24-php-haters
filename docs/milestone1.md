@@ -6,14 +6,14 @@
 
 - Undergrad Planner
 
-# Team Overview
+# TEAM OVERVIEW
 
 - Shubh Vashisht
 - Tanishk Jain
 - Shreya Khettry
 - Varisht Aggarwal
 
-# Innovative Idea
+# INNOVATIVE IDEA
 
 As undergraduate students, we have realized that the main aspect, in having a successful academic career at university, is planning. Prior planning has always been advantageous even in the cases where everything does not go according to plan, as an individual always has a backup. Backups are only possible with prior planning. This is the main motive behind our idea of creating an all-in-one multi-aspect planner for undergraduate students. Our planner will help students to do the following:
 
