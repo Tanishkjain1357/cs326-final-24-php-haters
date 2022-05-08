@@ -12,6 +12,8 @@
 
 # OVERVIEW
 
+Our project displays various information that as undergraduate students is essential for us to know. We have a tab that displays major requirements including course descriptions for courses related to a particular major. It also displays a page that lists the multiple research areas its description and the faculty present in that research area. We have tabs for Clubs/RSOs, a calendar to add events
+
 # TEAM MEMBERS (Individual GitHubs Mentioned)
 
 - Tanishk Jain - tanishkjain1357
