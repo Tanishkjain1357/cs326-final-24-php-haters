@@ -31,7 +31,7 @@ Our project displays various information that as undergraduate students is essen
 
 - Major Requirements: The above page displays our major requirements page. You can search courses by number of credits
 
-![Research Areas](../imag/maj.png)
+![Research Areas](../imag/res.png)
 
 - Research: The above image displays our research page where you can search by research area or professor name.
 
