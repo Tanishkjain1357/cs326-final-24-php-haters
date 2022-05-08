@@ -12,7 +12,7 @@
 
 # OVERVIEW
 
-Our project displays various information that as undergraduate students is essential for us to know. We have a tab that displays major requirements including course descriptions for courses related to a particular major. It also displays a page that lists the multiple research areas its description and the faculty present in that research area. We have tabs for Clubs/RSOs, a calendar to add events
+Our project displays various information that as undergraduate students is essential for us to know. We have a tab that displays major requirements including course descriptions for courses related to a particular major. It also displays a page that lists the multiple research areas its description and the faculty present in that research area. We have tabs for Clubs/RSOs, a calendar to add events and a career development page that is still under the works and wil be released in the future.
 
 # TEAM MEMBERS (Individual GitHubs Mentioned)
 
@@ -24,46 +24,6 @@ Our project displays various information that as undergraduate students is essen
 # USER INTERFACE
 
 # APIs
-
-# DATABASE
-
-#### Major Requirements Table (Course Descriptions)
-
-| Column       | Data Type   | Description              |
-|--------------|-------------|--------------------------|
-| name         | String      | The name of the course including course number  |
-| instructor   | String      | The names of all the instructors teaching the course or that have taught the course in the past |
-| description  | String      | The description of the course |
-| credits      | Number      | The number of credits the course counts for |
-
-
-#### Research Areas Information Table 
-
-| Column       | Data Type | Description              |
-|--------------|-----------|--------------------------|
-| name         | String    | The name of the research area |
-| faculty      | String    | The names of all the faculty part of the research area |
-| description  | String    | The description of the research area |
-
-
-#### Clubs/RSOs Information Table
-
-| Column       | Data Type | Description              |
-|--------------|-----------|--------------------------|
-| name         | String    | The name of the Club/RSO |
-| description  | String    | The description of the Club/RSO |
-
-#### Internship Oppertunity Table
-
-| Column       | Data Type | Description              |
-|--------------|-----------|--------------------------|
-| Employee     | String    | The type of the Internship |
-| Industry     | String    | The industry of the Internship |
-| Location     | String    | The location of the Internship |
-
-
-
-# URL ROUTES/MAPPING
 
 #### Major Requirements and Course Descriptions API Routes
 
@@ -106,6 +66,49 @@ Our project displays various information that as undergraduate students is essen
 | GET @ /carDev    | Used to get all the internship opportunities in the database|
 | PUT @ /carDev    | Used to update an internship opportunity in the database|
 | DELETE @ /carDev | Used to delete an internship opportunity in the database|
+
+
+# DATABASE
+
+#### Major Requirements Table (Course Descriptions)
+
+| Column       | Data Type   | Description              |
+|--------------|-------------|--------------------------|
+| name         | String      | The name of the course including course number  |
+| instructor   | String      | The names of all the instructors teaching the course or that have taught the course in the past |
+| description  | String      | The description of the course |
+| credits      | Number      | The number of credits the course counts for |
+
+
+#### Research Areas Information Table 
+
+| Column       | Data Type | Description              |
+|--------------|-----------|--------------------------|
+| name         | String    | The name of the research area |
+| faculty      | String    | The names of all the faculty part of the research area |
+| description  | String    | The description of the research area |
+
+
+#### Clubs/RSOs Information Table
+
+| Column       | Data Type | Description              |
+|--------------|-----------|--------------------------|
+| name         | String    | The name of the Club/RSO |
+| description  | String    | The description of the Club/RSO |
+
+#### Internship Oppertunity Table
+
+| Column       | Data Type | Description              |
+|--------------|-----------|--------------------------|
+| Employee     | String    | The type of the Internship |
+| Industry     | String    | The industry of the Internship |
+| Location     | String    | The location of the Internship |
+
+
+
+# URL ROUTES/MAPPING
+
+- public/homepage.html
 
 # AUTHENTICATION/AUTHORIZATION
 
