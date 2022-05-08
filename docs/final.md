@@ -23,6 +23,22 @@ Our project displays various information that as undergraduate students is essen
 
 # USER INTERFACE
 
+![Homepage](../imag/home.png)
+
+- Homepage: The above image displays our Homepage
+
+![Major Requirements](../imag/maj.png)
+
+- Major Requirements: The above page displays our major requirements page. You can search courses by number of credits
+
+![Research Areas](../imag/maj.png)
+
+- Research: The above image displays our research page where you can search by research area or professor name.
+
+![Clubs/RSOs](../imag/cl.png)
+
+- Clubs/RSOs: The above image displays our Clubs/RSOs tab that is still under the works like the Calendar tab and Career Development Tab.
+
 # APIs
 
 #### Major Requirements and Course Descriptions API Routes
@@ -110,7 +126,6 @@ Our project displays various information that as undergraduate students is essen
 
 - public/homepage.html
 
-# AUTHENTICATION/AUTHORIZATION
 
 # DIVISION OF LABOR
 
